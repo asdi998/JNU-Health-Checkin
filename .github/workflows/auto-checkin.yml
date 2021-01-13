@@ -13,9 +13,6 @@ on:
 
 env:
   TZ: Asia/Shanghai
-  USERNAME: ${{ secrets.USERNAME }}
-  PASSWORD: ${{ secrets.PASSWORD }}
-  SCKEY: ${{ secrets.SCKEY }}
 
 jobs:
   build:
@@ -37,3 +34,7 @@ jobs:
     - name: 自动打卡
       run: |
         python checkin.py
+      env:
+        USERNAME: ${{ secrets.USERNAME }}
+        PASSWORD: ${{ secrets.PASSWORD }}
+        SCKEY: ${{ secrets.SCKEY }}
