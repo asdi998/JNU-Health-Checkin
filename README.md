@@ -1,4 +1,4 @@
-# JNU-Heatlth-Checkin
+# JNU-Health-Checkin
 ## 介绍
 基于Github Action完成自动化的每日健康打卡工作。
 
