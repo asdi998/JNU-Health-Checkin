@@ -1,0 +1,44 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Jnu health auto checkin
+
+env:
+  TZ: Asia/Shanghai
+  USERNAME: ${{ secrets.USERNAME }}
+  PASSWORD: ${{ secrets.PASSWORD }}
+  SCKEY: ${{ secrets.SCKEY }}
+
+on:
+  schedule:
+    - cron: 4 1 * * *
+    - cron: 4 8 * * *
+  watch:
+    types: started
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests pycryptodome
+
+    - name: Auto Checkin
+      run: |
+        python checkin.py > result.txt
+
+    - name: Upload result
+      uses: actions/upload-artifact@v2
+      with:
+        name: result
+        path: result.txt
