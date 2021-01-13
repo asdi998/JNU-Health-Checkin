@@ -3,18 +3,19 @@
 
 name: 自动健康打卡
 
+on:
+  schedule:
+    # 此处为UTC时间17点和0点整，对应北京时间+8为1点和8点整
+    - cron: 0 17 * * *
+    - cron: 0 0 * * *
+  watch:
+    types: started
+
 env:
   TZ: Asia/Shanghai
   USERNAME: ${{ secrets.USERNAME }}
   PASSWORD: ${{ secrets.PASSWORD }}
   SCKEY: ${{ secrets.SCKEY }}
-
-on:
-  schedule:
-    - cron: 4 1 * * *
-    - cron: 4 8 * * *
-  watch:
-    types: started
 
 jobs:
   build:
