@@ -109,7 +109,6 @@ def sc_send(text, desp='') -> None:
 def checkin(username, password) -> Optional[str]:
     try:
         stu = STUHealth(username, password)
-        print(stu.login_msg)
         if stu.wrote:
             return
         last_id = stu.stucheckin()
