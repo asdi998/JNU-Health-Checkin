@@ -14,7 +14,6 @@
   - `PASSWORD`：密码
   - `SCKEY`：Server酱SCKEY，用于微信推送结果。(可选)
 * 点击`Star`，任务会自动执行，运行进度和结果可以在Actions页面查看
-* 当任务运行完成时，会将运行结果打包到Artifacts，可自行下载查看
 * 如果配置了Server酱，运行结果会推送到微信
 
 ## 获取Server酱SCKEY
