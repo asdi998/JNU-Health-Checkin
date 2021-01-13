@@ -46,8 +46,7 @@ class STUHealth():
         cipher = AES.new(CRYPTOJSKEY, AES.MODE_CBC, CRYPTOJSKEY)
         enrypted = b64encode(cipher.encrypt(
             pad(password).encode('utf-8'))).decode('utf-8')
-        enrypted = enrypted.replace(
-            '/', '_').replace('+', '-').replace('=', '*', 1)
+        enrypted = enrypted.replace('/', '_').replace('+', '-').replace('=', '*', 1)
         return enrypted
 
     def filter_table(self, table) -> dict:
@@ -96,7 +95,7 @@ class STUHealth():
         mainTable = self.result['data']['mainTable']
         return mainTable
 
-    def write(self, mainTable) -> tuple:
+    def write(self, mainTable) -> str:
         api = 'write/main'
         data = {"jnuid": self.jnuid, "mainTable": mainTable}
         return self.query(api, data)
@@ -125,12 +124,13 @@ def checkin(username, password) -> Optional[str]:
 
 if __name__ == "__main__":
     # accounts settings
-    usernames, passwords, SCKEY = getenv('USERNAME').split(), getenv('PASSWORD').split(), getenv('SCKEY')
-    accounts = [ (username,password) for username in usernames for password in passwords ]
+    usernames = getenv('USERNAME').split()
+    passwords = getenv('PASSWORD').split()
+    SCKEY = getenv('SCKEY')
     # run
     print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     push_msg = []
-    for account in accounts:
+    for account in zip(usernames, passwords):
         print("开始打卡...")
         msg = checkin(*account)
         if msg is not None:
