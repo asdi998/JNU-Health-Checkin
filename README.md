@@ -9,7 +9,7 @@
 
 ## 使用方式
 * 点击右上角 Fork 项目
-* Settings *> Secrets 中添加账号、SCKEY：
+* Settings -> Secrets 中添加账号、SCKEY：
   - `USERNAME`：账号
   - `PASSWORD`：密码
   - `SCKEY`：Server酱SCKEY，用于微信推送结果。(可选)
