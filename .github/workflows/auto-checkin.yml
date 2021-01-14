@@ -30,7 +30,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests pycryptodome
 
-    - name: 自动打卡
+    - name: 打卡
       run: |
         python checkin.py
       env:
