@@ -3,6 +3,7 @@
 基于Github Action完成自动化的每日健康打卡工作。
 
 ## 运行方式
+![自动健康打卡](https://github.com/asdi998/JNU-Health-Checkin/workflows/自动健康打卡/badge.svg)
 * 手动：点亮`Star`
 * 自动：凌晨1点和早上8点整定时执行
 * 自定义：编辑`.github/workflows/auto-checkin.yml`
