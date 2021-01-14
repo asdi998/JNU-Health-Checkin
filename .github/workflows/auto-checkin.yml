@@ -6,8 +6,7 @@ name: 自动健康打卡
 on:
   schedule:
     # 此处为UTC时间17点和0点整，对应北京时间+8为1点和8点整
-    - cron: 0 17 * * *
-    - cron: 0 0 * * *
+    - cron: 0 0,17 * * *
   watch:
     types: started
 
