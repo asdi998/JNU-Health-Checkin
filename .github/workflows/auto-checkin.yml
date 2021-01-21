@@ -5,8 +5,8 @@ name: 自动打卡
 
 on:
   schedule:
-    # 此处为UTC时间17点和0点整，对应北京时间+8为1点和8点整
-    - cron: 0 0,17 * * *
+    # 此处为UTC时间0点和2点整，对应北京时间+8为8点和10点整
+    - cron: 0 0,2 * * *
   watch:
     types: started
 
