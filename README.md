@@ -1,5 +1,5 @@
 # JNU-Health-Checkin
-![自动打卡](https://github.com/asdi998/JNU-Health-Checkin/workflows/自动打卡/badge.svg)
+![自动打卡](https://github.com/asdi998/JNU-Health-Checkin/workflows/Auto-checkin/badge.svg)
 
 ## 介绍
 基于Github Action完成自动化的每日健康打卡工作。
