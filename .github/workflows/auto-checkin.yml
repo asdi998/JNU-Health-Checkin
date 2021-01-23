@@ -14,7 +14,7 @@ env:
   TZ: Asia/Shanghai
 
 jobs:
-  build:
+  checkin:
 
     runs-on: ubuntu-latest
 
