@@ -11,12 +11,16 @@
 
 ## 使用方式
 * 点击右上角 Fork 项目
-* Settings -> Secrets 中添加账号、SCKEY：
+* 上方菜单 Settings -> Secrets 中添加账号、SCKEY：
   - `USERNAME`：账号
   - `PASSWORD`：密码
   - `SCKEY`：Server酱SCKEY，用于微信推送结果。(可选)
-* 点击`Star`，任务会自动执行，运行进度和结果可以在Actions页面查看
+* 点击`Star`，任务会自动执行，运行进度和结果可以在`Actions`页面查看
 * 如果配置了SCKEY，打卡结果会推送到微信
+
+## 停止/删除
+* 进入`Actions`页，点击`All workflows`选项，切换成`Auto-checkin`，旁边`•••`菜单，选择`Disable workflow`停止自动打卡
+* 进入`Settings`页，拉到底部，点击`Delete this repository`删除整个项目
 
 ## 其他说明
 * 若当日已经打卡，程序会自动退出，不会重复打卡。
