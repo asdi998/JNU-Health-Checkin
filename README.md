@@ -12,7 +12,7 @@
 
 ## 使用方式
 * 点击右上角 `Fork` 项目
-* 上方菜单 `Settings` -> `Secrets` 中多次点击 `New repository secret` 添加以下配置：
+* 上方菜单 `Settings` -> `Secrets` 中多次 `New repository secret` 添加以下配置：
   - `USERNAME`：账号
   - `PASSWORD`：密码
   - `SCKEY`：Server酱SCKEY，用于微信推送结果。(可选)
