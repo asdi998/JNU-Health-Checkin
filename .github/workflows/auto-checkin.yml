@@ -20,6 +20,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      # 下面2行用于自动获取最新的打卡代码，若不需要可以用#号作开头以注释掉
+      with:
+        repository: asdi998/JNU-Health-Checkin
+
     - name: Set up Python 3.7
       uses: actions/setup-python@v2
       with:
