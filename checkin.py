@@ -151,8 +151,8 @@ def checkin(username, password) -> Optional[str]:
 
 if __name__ == "__main__":
     # accounts settings
-    usernames = getenv('USERNAME').split()
-    passwords = getenv('PASSWORD').split()
+    usernames = getenv('USERNAME', '').split()
+    passwords = getenv('PASSWORD', '').split()
     SCKEY = getenv('SCKEY')
     # run
     print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
