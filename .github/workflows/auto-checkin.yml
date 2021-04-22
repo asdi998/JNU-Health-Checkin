@@ -5,8 +5,8 @@ name: Auto-checkin
 
 on:
   schedule:
-    # 此处为UTC时间1点和23点，对应北京时间+8为9点和7点
-    - cron: 0 1,23 * * *
+    # 此处为UTC时间0点、1点和23点，对应北京时间+8为8点、9点和7点
+    - cron: '0 0,1,23 * * *'
   watch:
     types: started
 
