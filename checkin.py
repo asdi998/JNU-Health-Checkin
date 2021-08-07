@@ -136,7 +136,7 @@ def sc_send(text, desp='') -> None:
 
 def tg_send(desp='') -> None:
     tg_api = 'https://api.telegram.org/bot'+BOTTOKEN+'/sendMessage'
-    tg_data = {'chat_id': TGCHATID, 'desp': desp}
+    tg_data = {'chat_id': TGCHATID, 'text': desp}
     post(tg_api, data=tg_data)
 
 
@@ -173,3 +173,4 @@ if __name__ == "__main__":
     if SCKEY and push_msg:
         print('发送微信推送...')
         sc_send('\n\n'.join(push_msg))
+        tg_send('\n\n'.join(push_msg))
