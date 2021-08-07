@@ -134,6 +134,12 @@ def sc_send(text, desp='') -> None:
     post('http://sc.ftqq.com/'+SCKEY+'.send', data=postdata)
 
 
+def tg_send(desp='') -> None:
+    tg_api = 'https://api.telegram.org/bot'+BOTTOKEN+'/sendMessage'
+    tg_data = {'chat_id': TGCHATID, 'desp': desp}
+    post(tg_api, data=tg_data)
+
+
 def checkin(username, password) -> Optional[str]:
     try:
         stu = STUHealth(username, password)
@@ -154,6 +160,8 @@ if __name__ == "__main__":
     usernames = getenv('USERNAME', '').split()
     passwords = getenv('PASSWORD', '').split()
     SCKEY = getenv('SCKEY')
+    TGCHATID = getenv('TGCHATID')
+    BOTTOKEN = getenv('TGTOKEN')
     # run
     print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     push_msg = []
