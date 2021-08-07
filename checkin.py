@@ -161,7 +161,7 @@ if __name__ == "__main__":
     passwords = getenv('PASSWORD', '').split()
     SCKEY = getenv('SCKEY')
     TGCHATID = getenv('TGCHATID')
-    BOTTOKEN = getenv('TGTOKEN')
+    BOTTOKEN = getenv('BOTTOKEN')
     # run
     print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     push_msg = []
@@ -173,4 +173,6 @@ if __name__ == "__main__":
     if SCKEY and push_msg:
         print('发送微信推送...')
         sc_send('\n\n'.join(push_msg))
+    if BOTTOKEN and push_msg:
+        print('发送 Telegram 推送...')
         tg_send('\n\n'.join(push_msg))
