@@ -131,7 +131,7 @@ class STUHealth():
 
 def sc_send(text, desp='') -> None:
     postdata = {'text': text, 'desp': desp}
-    post('http://sc.ftqq.com/'+SCKEY+'.send', data=postdata)
+    post('https://sctapi.ftqq.com/'+SCKEY+'.send', data=postdata)
 
 
 def tg_send(desp='') -> None:
