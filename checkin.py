@@ -131,7 +131,13 @@ class STUHealth():
 
 def sc_send(text, desp='') -> None:
     postdata = {'text': text, 'desp': desp}
-    post('http://sc.ftqq.com/'+SCKEY+'.send', data=postdata)
+    post('https://sctapi.ftqq.com/'+SCKEY+'.send', data=postdata)
+
+
+def tg_send(desp='') -> None:
+    tg_api = 'https://api.telegram.org/bot'+BOTTOKEN+'/sendMessage'
+    tg_data = {'chat_id': TGCHATID, 'text': desp}
+    post(tg_api, data=tg_data)
 
 
 def checkin(username, password) -> Optional[str]:
@@ -154,6 +160,8 @@ if __name__ == "__main__":
     usernames = getenv('USERNAME', '').split()
     passwords = getenv('PASSWORD', '').split()
     SCKEY = getenv('SCKEY')
+    TGCHATID = getenv('TGCHATID')
+    BOTTOKEN = getenv('BOTTOKEN')
     # run
     print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     push_msg = []
@@ -165,3 +173,6 @@ if __name__ == "__main__":
     if SCKEY and push_msg:
         print('发送微信推送...')
         sc_send('\n\n'.join(push_msg))
+    if BOTTOKEN and push_msg:
+        print('发送 Telegram 推送...')
+        tg_send('\n\n'.join(push_msg))
